@@ -111,12 +111,26 @@ const CityLayout = () => {
 
             {/* Mobile Nav - Keeping for quick access */}
             <nav className="md:hidden fixed bottom-6 left-6 right-6 bg-black/90 border border-white/20 backdrop-blur-lg p-4 flex justify-around z-40 rounded-2xl shadow-[0_0_20px_rgba(0,0,0,0.5)]">
-                <Link to="/smart-city" className="text-cyan-400"><Zap /></Link>
-                <Link to="/smart-city/home" className="text-slate-500"><Home /></Link>
-                <Link to="/smart-city/nav" className="text-slate-500"><Navigation /></Link>
-                <Link to="/smart-city/services" className="text-slate-500"><CreditCard /></Link>
+                <MobileNavItem to="/smart-city" icon={Zap} />
+                <MobileNavItem to="/smart-city/home" icon={Home} />
+                <MobileNavItem to="/smart-city/nav" icon={Navigation} />
+                <MobileNavItem to="/smart-city/services" icon={CreditCard} />
             </nav>
         </div>
+    );
+};
+
+const MobileNavItem = ({ to, icon: Icon }) => {
+    const location = useLocation();
+    const active = location.pathname === to;
+
+    return (
+        <Link to={to} className={clsx(
+            "transition-colors duration-300",
+            active ? "text-cyan-400 drop-shadow-[0_0_5px_rgba(6,182,212,0.8)]" : "text-slate-500 hover:text-slate-300"
+        )}>
+            <Icon size={24} />
+        </Link>
     );
 };
 
