@@ -126,7 +126,7 @@ const HealthLayout = () => {
             </AnimatePresence>
 
             {/* Main Content */}
-            <main className="flex-1 w-full lg:ml-72 p-6 lg:p-12">
+            <main className="flex-1 w-full lg:ml-72 p-6 lg:p-12 pb-24 lg:pb-12">
                 <header className="flex justify-between items-center mb-8 lg:mb-10">
                     <div>
                         <h1 className="text-xl lg:text-2xl font-bold text-slate-800">Good Morning, John</h1>
@@ -146,7 +146,32 @@ const HealthLayout = () => {
 
                 <Outlet />
             </main>
+
+            {/* Bottom Navigation (Mobile) */}
+            <div className="lg:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-slate-200 px-6 py-2 pb-safe flex justify-between items-center z-30">
+                <BottomNavItem to="/healthcare" icon={PieChart} label="Snapshot" />
+                <BottomNavItem to="/healthcare/vitals" icon={Activity} label="Vitals" />
+                <BottomNavItem to="/healthcare/appointments" icon={Calendar} label="Calendar" />
+                <BottomNavItem to="/healthcare/medications" icon={FileText} label="Meds" />
+                <BottomNavItem to="/healthcare/mental" icon={MessageSquare} label="Mental" />
+            </div>
         </div>
+    );
+};
+
+const BottomNavItem = ({ to, icon: Icon, label }) => {
+    const location = useLocation();
+    // Check if active (exact match or subdirectory)
+    const active = location.pathname === to || (to !== '/healthcare' && location.pathname.startsWith(to));
+
+    return (
+        <Link to={to} className={clsx(
+            "flex flex-col items-center gap-1 p-2 rounded-xl transition-all duration-200",
+            active ? "text-cyan-600" : "text-slate-400 hover:text-slate-600"
+        )}>
+            <Icon size={24} strokeWidth={active ? 2.5 : 2} />
+            <span className="text-[10px] font-medium">{label}</span>
+        </Link>
     );
 };
 
