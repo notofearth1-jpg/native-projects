@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { ShoppingBag, Star, Leaf, Filter } from 'lucide-react';
 
 const Products = [
-    { id: 1, name: "Bamboo Toothbrush Set", price: "$12.00", rating: 4.8, image: "https://img.freepik.com/premium-photo/natural-eco-friendly-bamboo-toothbrush-with-tree-leaves-plastic-toothbrush-gray-surface_926199-1432752.jpg?ga=GA1.1.588263625.1759817255&semt=ais_wordcount_boost&w=740&q=80", impact: "Zero Plastic" },
+    { id: 1, name: "Bamboo Toothbrush Set", price: "$12.00", rating: 4.8, image: "https://img.freepik.com/premium-photo/eco-friendly-bamboo-toothbrush-pastel-background-zero-waste-life-without-plastic_223515-201.jpg?ga=GA1.1.588263625.1759817255&semt=ais_wordcount_boost&w=740&q=80", impact: "Zero Plastic" },
     { id: 2, name: "Reusable Silicone Bags", price: "$24.50", rating: 4.9, image: "https://img.freepik.com/premium-photo/hand-holding-yellow-mesh-bag-with-daisies_1030899-14180.jpg?ga=GA1.1.588263625.1759817255&semt=ais_wordcount_boost&w=740&q=80", impact: "Save 500+ Baggies" },
     { id: 3, name: "Organic Cotton Tote", price: "$18.00", rating: 4.7, image: "https://images.unsplash.com/photo-1597484662317-c9253e609cfa?q=80&w=2696&auto=format&fit=crop", impact: "Fair Trade" },
     { id: 4, name: "Solar Power Bank", price: "$45.00", rating: 4.6, image: "https://images.unsplash.com/photo-1620714223084-8fcacc6dfd8d?q=80&w=2671&auto=format&fit=crop", impact: "Clean Energy" },
